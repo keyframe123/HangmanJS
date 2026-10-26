@@ -1,179 +1,132 @@
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  background-color: rgb(179, 179, 179);
-  color: rgb(0, 158, 0);
-  font-family: sans-serif;
-}
-.Hangman {
-  margin: 0 0 0 0;
-  font-size: 4.5vh;
-  font-style: italic;
-  color: rgb(180, 76, 7);
-  text-shadow: 2.5px 2.5px rgb(0, 100, 146);
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #b3b3b3;
+	color: #00a000;
+	font-family: sans-serif;
 }
 
-.element {
-  text-align: center;
-  margin-top: 20px;
-  color: rgb(39, 39, 39);
+#game-title {
+	margin: 0;
+	font-size: 4.5vh;
+	font-style: italic;
+	color: #b44c07;
+	text-shadow: 2.5px 2.5px #006492;
+	text-align: center;
+	margin-top: 20px;
 }
 
-.inputOutput {
-  display: flex;
-  flex-direction: column;
+.game-images {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	margin: 3% 3% 0 3%;
+	height: 100%;
 }
 
-.countAndRestart {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin: 20px 11px 0 120px;
-}
-.countdown {
-  display: flex;
-  font-size: 25px;
-  color: rgb(0, 100, 146);
-}
-.number {
-  align-self: center;
-  margin: 0 0 0 5px;
-}
-.text {
-  align-self: center;
-  margin: 0 0 0 0;
-}
-.inputSubmit {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-right: 25px;
+.images {
+	position: relative;
 }
 
-.input {
-  margin: 0 0 0 50px;
-  justify-self: center;
-  color: rgb(39, 39, 39);
+.images img.part {
+	width: 95%;
+	max-width: 600px;
+}
+
+.hidden {
+	display: none;
+}
+
+.incorrect-guesses {
+	border: 2px solid #006492;
+	border-radius: 15px;
+	color: #006492;
+	font-size: 25px;
+	padding: 5px;
+	margin-left: 20px;
+}
+
+.incorrect-label {
+	margin: 0 5px 0 5px;
+}
+
+.incorrect-letters {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.incorrect-letters li {
+	line-height: 30px;
+	font-size: 27px;
+	margin-left: 30px;
+}
+
+.controls {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.counter {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin: 20px 11px 0 120px;
+}
+
+.counter-display {
+	display: flex;
+	font-size: 25px;
+	color: #006492;
+}
+
+.counter-display .value {
+	margin-left: 5px;
+}
+
+.input-submit {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-right: 25px;
+}
+
+.input-field {
+	margin-left: 50px;
+	color: #272727;
 }
 
 label {
-  font-size: 30px;
-  justify-self: center;
+	font-size: 30px;
 }
 
-#iname {
-  font-size: 30px;
-  border-radius: 7px;
-  width: 5vh;
+#guess-input {
+	font-size: 30px;
+	border-radius: 7px;
+	width: 5vh;
 }
 
-.result {
-  align-self: center;
-  margin: 30px 0 30px 0;
-  font-size: 33px;
-  color: rgb(39, 39, 39);
+.message {
+	text-align: center;
+	margin: 30px 0;
+	font-size: 33px;
+	color: #272727;
 }
 
-.wrong {
-  align-self: center;
-  margin: 0 0 0 0;
-  font-size: 32px;
-  color: rgb(182, 26, 26);
+.message-wrong {
+	margin: 0;
+	font-size: 32px;
+	color: #b61a1a;
 }
 
-#button1 {
-  background-color: rgba(180, 76, 7, 0.8);
-  border-radius: 15px;
-  height: 35px;
-  align-self: center;
-  margin: 0 0 0 25px;
-}
-
-#button2 {
-  background-color: rgba(180, 76, 7, 0.8);
-  border-radius: 15px;
-  height: 35px;
-  margin: 0 0 0 40px;
-}
-
-.flex-pictures {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin: 3% 3% 0 3%;
-  min-height: 80px;
-}
-.pictures {
-  justify-content: flex-start;
-}
-.guesses {
-  border: 2px solid rgb(0, 100, 146);
-  border-radius: 15px;
-  color: rgb(0, 100, 146);
-  font-size: 25px;
-  justify-content: flex-end;
-}
-
-.guesses > p {
-  margin: 0 5px 0 5px;
-}
-
-.guesses ul {
-  margin: 0 0 5px 0;
-}
-
-.guesses li {
-  line-height: 30px;
-  font-size: 27px;
-}
-
-/* Pictures*/
-.basic {
-  width: 95%;
-  max-width: 600px;
-}
-.head {
-  width: 95%;
-  max-width: 600px;
-}
-.eye1 {
-  width: 95%;
-  max-width: 600px;
-}
-.eye2 {
-  width: 95%;
-  max-width: 600px;
-}
-.nose {
-  width: 95%;
-  max-width: 600px;
-}
-.mouth {
-  width: 95%;
-  max-width: 600px;
-}
-.body {
-  width: 95%;
-  max-width: 600px;
-}
-.arm1 {
-  width: 95%;
-  max-width: 600px;
-}
-.arm2 {
-  width: 95%;
-  max-width: 600px;
-}
-.leg1 {
-  width: 95%;
-  max-width: 600px;
-}
-.leg2 {
-  width: 95%;
-  max-width: 600px;
-}
-
-.hide {
-  display: none;
+#submit,
+#restart {
+	background-color: rgba(180, 76, 7, 0.8);
+	border-radius: 15px;
+	height: 35px;
+	margin: 0 0 0 25px;
 }

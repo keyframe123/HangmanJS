@@ -1,73 +1,71 @@
 <!DOCTYPE html>
 <html lang="de-DE">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
-    <title>Hangman</title>
-  </head>
-  <body>
-    <div class="element">
-      <h1 class="Hangman">Hangman</h1>
-    </div>
 
-    <div class="flex-pictures">
-    <div class="pictures">
-      <img src="img/basic.jpg" class="hide basic" />
-      <img src="img/head.jpg" class="hide head" />
-      <img src="img/eye1.jpg" class="hide eye1" />
-      <img src="img/eye2.jpg" class="hide eye2" />
-      <img src="img/nose.jpg" class="hide nose" />
-      <img src="img/mouth.jpg" class="hide mouth" />
-      <img src="img/body.jpg" class="hide body" />
-      <img src="img/arm1.jpg" class="hide arm1" />
-      <img src="img/arm2.jpg" class="hide arm2" />
-      <img src="img/leg1.jpg" class="hide leg1" />
-      <img src="img/leg2.jpg" class="hide leg2" />
-    </div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="style.css" rel="stylesheet" />
+	<title>Hangman</title>
+</head>
 
-    <div class="guesses">
-      <p>
-        Nicht enthalten:
-        <ul class="guessList">
-          
-        </ul>
-      </p>
-    </div>
+<body>
+	<header>
+		<h1 id="game-title">Hangman</h1>
+	</header>
 
-  </div>
+	<div class="game-images">
+		<div class="images">
+			<img src="img/basic.jpg" class="part hidden basic" data-part="basic" />
+			<img src="img/head.jpg" class="part hidden head" data-part="head" />
+			<img src="img/eye1.jpg" class="part hidden eye1" data-part="eye1" />
+			<img src="img/eye2.jpg" class="part hidden eye2" data-part="eye2" />
+			<img src="img/nose.jpg" class="part hidden nose" data-part="nose" />
+			<img src="img/mouth.jpg" class="part hidden mouth" data-part="mouth" />
+			<img src="img/body.jpg" class="part hidden body" data-part="body" />
+			<img src="img/arm1.jpg" class="part hidden arm1" data-part="arm1" />
+			<img src="img/arm2.jpg" class="part hidden arm2" data-part="arm2" />
+			<img src="img/leg1.jpg" class="part hidden leg1" data-part="leg1" />
+			<img src="img/leg2.jpg" class="part hidden leg2" data-part="leg2" />
+		</div>
 
-  <section class="inputOutput">
-<div class="countAndRestart">
-    <div class="countdown">
-      <p class="text">Verbleibende Versuche:</p>
-      <p class="number">10</p>
-    </div>
+		<div class="incorrect-guesses">
+			<p class="incorrect-label">Nicht enthalten:</p>
+			<ul class="incorrect-letters"></ul>
+		</div>
+	</div>
 
-    <button type="button" class="btn btn-secondary" id="button2">
-      Neustart
-    </button>
-  </div>
+	<section class="controls">
+		<div class="counter">
+			<div class="counter-display">
+				<span class="label">Verbleibende Versuche:</span>
+				<span class="value">10</span>
+			</div>
 
-    <div class="result">
-      <p class="text hide"></p>
-      <p class="wrong hide">nicht enthalten</p>
-    </div>
+			<button type="button" class="btn btn-secondary" id="restart">
+				Neustart
+			</button>
+		</div>
 
-    <div class="inputSubmit">
-    <div class="input">
-      <label for="iname">Buchstabe:</label>
-      <input type="text" name="input" id="iname" value="" />
-    </div>
+		<div class="message">
+			<p class="message-text hidden"></p>
+			<p class="message-wrong hidden">nicht enthalten</p>
+		</div>
 
-      <button type="button" class="btn btn-secondary" id="button1">
-        senden
-      </button>
-  </div>
-</section>
+		<div class="input-submit">
+			<div class="input-field">
+				<label for="guess-input">Buchstabe:</label>
+				<input type="text" id="guess-input" value="" />
+			</div>
 
-    <script src="wordlist.js"></script>
-    <script src="app.js"></script>
-  </body>
+			<button type="button" class="btn btn-secondary" id="submit">
+				senden
+			</button>
+		</div>
+	</section>
+
+	<script src="wordlist.js"></script>
+	<script src="app.js"></script>
+</body>
+
 </html>
